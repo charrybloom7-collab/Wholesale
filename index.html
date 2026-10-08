@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wholesale Vapes: Smart Bulk Buying Guide for Retailers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171B20;
+    --ink-soft:#555E67;
+    --paper:#F7F8F7;
+    --panel:#EAEDEC;
+    --line:#D9DEDD;
+    --steel:#3A6EA5;
+    --steel-deep:#285480;
+    --copper:#C98A4B;
+    --radius:6px;
+    --max:1140px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Libre Franklin', sans-serif;font-weight:700;line-height:1.2;
+    margin:0 0 .5em 0;color:var(--ink);letter-spacing:-.005em;
+  }
+  p{margin:0 0 1.1em 0;max-width:70ch;}
+  a{color:var(--steel-deep);}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+  /* ---------- HEADER (single line) ---------- */
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .header-row{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+    padding:16px 32px;max-width:var(--max);margin:0 auto;white-space:nowrap;
+  }
+  .brand{
+    font-family:'Libre Franklin', sans-serif;font-weight:800;font-size:19px;color:var(--ink);
+    flex:0 0 auto;display:flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:.3px;
+  }
+  .brand .mark{color:var(--steel);}
+  nav.main-nav{display:flex;gap:26px;overflow-x:auto;flex:1 1 auto;justify-content:center;}
+  nav.main-nav a{color:var(--ink-soft);text-decoration:none;font-size:14.5px;font-weight:600;}
+  nav.main-nav a:hover{color:var(--ink);}
+  .header-cta{
+    flex:0 0 auto;background:var(--steel);color:#fff;font-weight:700;font-size:14px;
+    padding:10px 20px;border-radius:var(--radius);text-decoration:none;
+  }
+  .header-cta:hover{background:var(--steel-deep);}
+  @media (max-width:880px){ nav.main-nav{display:none;} }
+
+  /* ---------- HERO ---------- */
+  section.hero{
+    background:
+      radial-gradient(900px 420px at 88% -10%, rgba(58,110,165,.18), transparent 60%),
+      var(--ink);
+    color:#E4E7E9;
+    padding:80px 0 88px;
+  }
+  .hero-inner{max-width:800px;}
+  .eyebrow-plain{color:var(--copper);font-size:14.5px;font-weight:700;letter-spacing:.4px;margin-bottom:18px;text-transform:uppercase;}
+  section.hero h1{color:#fff;font-size:clamp(28px,4vw,46px);max-width:19ch;margin-bottom:22px;}
+  section.hero p.lead{color:#C2C8CC;font-size:18.5px;max-width:64ch;margin-bottom:0;}
+  section.hero p.lead a{color:var(--copper);font-weight:700;text-decoration:underline;text-underline-offset:3px;}
+  section.hero p.lead a:hover{color:#fff;}
+
+  /* ---------- GENERIC SECTIONS ---------- */
+  section.block{padding:72px 0;}
+  section.block.panel{background:var(--panel);}
+  section.block h2{font-size:clamp(25px,2.9vw,33px);max-width:24ch;}
+  section.block .kicker{
+    color:var(--steel-deep);font-weight:700;font-size:13.5px;letter-spacing:.3px;
+    margin-bottom:10px;text-transform:uppercase;
+  }
+  .lede{font-size:18px;color:var(--ink-soft);max-width:66ch;}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  @media (max-width:800px){ .two-col{grid-template-columns:1fr;} }
+
+  blockquote.callout{
+    border-left:3px solid var(--copper);background:#fff;margin:28px 0;padding:20px 24px;
+    font-family:'Libre Franklin', sans-serif;font-size:18px;font-weight:700;color:var(--ink);
+    max-width:62ch;border-radius:0 var(--radius) var(--radius) 0;
+  }
+  blockquote.callout a{font-weight:700;color:var(--steel-deep);}
+
+  /* ---------- CHECKLIST ---------- */
+  ul.check{list-style:none;margin:24px 0;padding:0;max-width:64ch;columns:2;column-gap:32px;}
+  ul.check li{position:relative;padding-left:26px;margin-bottom:12px;font-size:15.5px;break-inside:avoid;}
+  ul.check li::before{
+    content:"";position:absolute;left:0;top:6px;width:14px;height:14px;
+    border:2px solid var(--steel);border-radius:4px;
+  }
+  @media (max-width:640px){ ul.check{columns:1;} }
+
+  /* ---------- STEP LIST ---------- */
+  ol.steps{list-style:none;counter-reset:step;margin:28px 0;padding:0;max-width:66ch;}
+  ol.steps li{
+    counter-increment:step;position:relative;padding:0 0 20px 46px;
+    border-left:2px solid var(--line);margin-left:15px;
+  }
+  ol.steps li:last-child{border-left:2px solid transparent;padding-bottom:0;}
+  ol.steps li::before{
+    content:counter(step);position:absolute;left:-15px;top:0;
+    width:30px;height:30px;border-radius:50%;background:var(--steel);color:#fff;
+    font-family:'Libre Franklin',sans-serif;font-weight:700;font-size:14px;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .cmp-wrap{overflow-x:auto;margin-top:32px;}
+  table.cmp{width:100%;border-collapse:collapse;min-width:680px;font-size:15px;}
+  table.cmp th,table.cmp td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top;}
+  table.cmp thead th{background:var(--ink);color:#fff;font-family:'Libre Franklin',sans-serif;font-weight:700;font-size:15px;}
+  table.cmp tbody tr:nth-child(even){background:var(--panel);}
+  table.cmp td:first-child{font-weight:700;color:var(--ink);white-space:nowrap;}
+
+  /* ---------- FAQ ---------- */
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item summary{
+    cursor:pointer;list-style:none;padding:20px 0;font-family:'Libre Franklin',sans-serif;
+    font-weight:700;font-size:17.5px;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";flex:0 0 auto;font-size:22px;color:var(--steel-deep);transition:transform .2s ease;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{padding-bottom:20px;color:var(--ink-soft);}
+
+  /* ---------- FINAL CTA ---------- */
+  section.cta-final{background:var(--ink);color:#fff;padding:64px 0;text-align:center;}
+  section.cta-final h2{color:#fff;margin:0 auto 14px;max-width:24ch;}
+  section.cta-final p{color:#C2C8CC;margin:0 auto 28px;max-width:52ch;}
+  .btn-steel{
+    display:inline-block;background:var(--steel);color:#fff;font-weight:700;
+    padding:14px 30px;border-radius:var(--radius);text-decoration:none;
+  }
+  .btn-steel:hover{background:var(--steel-deep);}
+
+  /* ---------- FOOTER ---------- */
+  footer.site{background:#101317;color:#848B8E;padding:52px 0 28px;font-size:14.5px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  @media (max-width:700px){ .footer-grid{grid-template-columns:1fr;} }
+  footer.site h5{color:#fff;font-family:'Libre Franklin',sans-serif;font-size:15px;font-weight:700;margin:0 0 14px;}
+  footer.site ul{list-style:none;padding:0;margin:0;}
+  footer.site li{margin-bottom:9px;}
+  footer.site a{color:#848B8E;text-decoration:none;}
+  footer.site a:hover{color:#fff;}
+  .social-row{display:flex;gap:12px;margin-top:6px;}
+  .social-row a{
+    width:36px;height:36px;border:1px solid rgba(255,255,255,.14);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;
+  }
+  .social-row a:hover{background:var(--steel);border-color:var(--steel);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);padding-top:22px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-size:13px;color:#565C5F;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="header-row">
+    <div class="brand"><span class="mark">▣</span>HighRock Wholesale</div>
+    <nav class="main-nav">
+      <a href="#suppliers">Suppliers</a>
+      <a href="#pricing">Pricing &amp; MOQ</a>
+      <a href="#compliance">Compliance</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="header-cta" href="https://highrockvapeswholesale.ie/">Request a Quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow-plain">For Retailers &amp; Trade Buyers</div>
+    <h1>Wholesale Vapes: a smart bulk buying guide for retailers</h1>
+    <p class="lead">
+      For retailers and established businesses, sourcing products in bulk can make inventory management easier
+      and create a more organized purchasing process.
+      <a href="https://highrockvapeswholesale.ie/">Wholesale Vapes</a>
+      is a broad category covering the commercial supply of vaping devices, pods, e-liquids, replacement
+      components, and related products through wholesale channels.
+    </p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap two-col">
+    <div>
+      <div class="kicker">The Basics</div>
+      <h2>What are wholesale vapes?</h2>
+      <p>
+        Wholesale vapes are vaping products purchased in commercial quantities from manufacturers, distributors,
+        or specialized wholesalers — generally intended for legitimate retailers and businesses rather than
+        individual consumers.
+      </p>
+      <p>Product availability and legal requirements can differ significantly between countries. Businesses should always verify that the products they intend to purchase are permitted for sale in their particular market.</p>
+    </div>
+    <div>
+      <div class="kicker">The Business Case</div>
+      <h2>Why do retailers buy vapes wholesale?</h2>
+      <p>
+        Buying in bulk can simplify purchasing for businesses with consistent customer demand — retailers can
+        plan orders according to expected sales and available storage, making it easier to maintain a
+        consistent product range.
+      </p>
+      <p>At the same time, bulk purchasing involves financial risk — ordering too much inventory can tie up capital and leave a business with products that are difficult to sell.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block panel">
+  <div class="wrap">
+    <div class="kicker">The Catalog</div>
+    <h2>Types of products available through wholesale</h2>
+    <p class="lede">The exact selection varies from supplier to supplier, but wholesale catalogs can include several broad categories.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead><tr><th>Product Category</th><th>Typical Purpose</th><th>Key Consideration</th></tr></thead>
+        <tbody>
+          <tr><td>Pod Devices</td><td>Compact vaping systems</td><td>Pod compatibility</td></tr>
+          <tr><td>Vape Kits</td><td>Complete device setups</td><td>Included components</td></tr>
+          <tr><td>Refillable Devices</td><td>Reusable systems</td><td>Compatible liquids or pods</td></tr>
+          <tr><td>Replacement Pods</td><td>Device replacements</td><td>Exact model compatibility</td></tr>
+          <tr><td>Coils</td><td>Replaceable heating components</td><td>Device compatibility</td></tr>
+          <tr><td>Tanks</td><td>Liquid-holding components</td><td>Capacity and compatibility</td></tr>
+          <tr><td>Accessories</td><td>Supporting equipment</td><td>Manufacturer specifications</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:24px;">Retailers should focus on products that match customer demand and applicable market requirements instead of purchasing every item offered by a supplier.</p>
+  </div>
+</section>
+
+<section class="block" id="suppliers">
+  <div class="wrap two-col">
+    <div>
+      <div class="kicker">Choosing a Partner</div>
+      <h2>How to choose a wholesale vape supplier</h2>
+      <p>Supplier selection is one of the most important decisions in wholesale purchasing — a supplier should be evaluated on more than price.</p>
+      <ul class="check">
+        <li>Supplier reputation and business history</li>
+        <li>Product authenticity</li>
+        <li>Wholesale pricing and MOQ</li>
+        <li>Shipping and delivery terms</li>
+        <li>Product documentation</li>
+        <li>Return and damaged-product policies</li>
+        <li>Customer support</li>
+        <li>Applicable legal requirements</li>
+      </ul>
+    </div>
+    <div>
+      <div class="kicker">Protecting Your Brand</div>
+      <h2>Product quality and authenticity</h2>
+      <p>
+        Quality matters most for businesses building long-term customer relationships — selling products with
+        unclear origins or questionable packaging can damage customer confidence.
+      </p>
+      <p>When purchasing branded products, take reasonable steps to verify authenticity through packaging, product information, verification systems, and <a href=https://doc.clickup.com/90182855884/d/h/2kzn2b6c-718/7eaac837f4b8ba7>supplier documentation.</a> Extremely low prices should be approached carefully — cheaper isn't necessarily better value if authenticity can't be verified.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block panel" id="pricing">
+  <div class="wrap two-col">
+    <div>
+      <div class="kicker">The Full Cost</div>
+      <h2>Understanding wholesale vape pricing</h2>
+      <p>
+        Wholesale pricing depends on product type, order quantity, supplier, market, shipping, taxes, and other
+        costs. Calculate the total cost of acquisition instead of looking only at the listed unit price.
+      </p>
+      <p>A supplier may advertise a low product price but charge more for shipping or require a large minimum order — comparing the complete cost gives a more realistic picture of value.</p>
+    </div>
+    <div>
+      <div class="kicker">The Order Floor</div>
+      <h2>Minimum order quantities</h2>
+      <p>
+        Minimum order quantity (MOQ) is an important part of wholesale purchasing. Some suppliers allow smaller
+        orders, while others require larger purchases — a high MOQ may reduce per-unit price but can create
+        additional inventory pressure.
+      </p>
+      <p>Small and medium-sized retailers should select order quantities that match their sales volume and available storage, rather than automatically choosing the largest package.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="kicker">Staying Organized</div>
+    <h2>Inventory management for vape retailers</h2>
+    <p class="lede">Effective inventory management can make a significant difference to a retail business.</p>
+    <p>
+      Keep accurate records of incoming products, current stock levels, damaged items, and outgoing sales — this
+      helps identify fast-moving products and avoid repeatedly ordering items that sell slowly. Establish
+      minimum stock levels for consistently popular products to prevent shortages while avoiding unnecessary
+      overstocking.
+    </p>
+    <ol class="steps">
+      <li>Monitor sales regularly</li>
+      <li>Identify consistently popular products</li>
+      <li>Set reasonable reorder levels</li>
+      <li>Review slow-moving inventory</li>
+      <li>Check incoming shipments carefully</li>
+      <li>Keep supplier and product records organized</li>
+      <li>Adjust future orders according to actual demand</li>
+    </ol>
+  </div>
+</section>
+
+<section class="block panel">
+  <div class="wrap">
+    <div class="kicker">Handling Stock</div>
+    <h2>Storage and product handling</h2>
+    <p class="lede">Wholesale inventory often means keeping more products on-site, making storage an important consideration.</p>
+    <p>
+      Products should be stored according to manufacturer instructions and applicable safety requirements.
+      Electronic devices and batteries should be protected from unsuitable temperatures, moisture, direct
+      sunlight, and physical damage. Keep damaged or <a href=https://docs.google.com/document/d/e/2PACX-1vQYIxMLd3EEgZAR3WY9kuKwp3_qxQaSeghIVXJuF9X3iut3RRQvkGglSOZJSvu4A49E7LlrAyYaW9yv/pub>questionable products separate</a> from saleable inventory
+      until their status has been properly assessed.
+    </p>
+  </div>
+</section>
+
+<section class="block" id="compliance">
+  <div class="wrap">
+    <div class="kicker">Non-Negotiable</div>
+    <h2>Compliance and responsible retailing</h2>
+    <p class="lede">Vaping products are subject to different rules depending on the country and jurisdiction.</p>
+    <blockquote class="callout">
+      Requirements may involve product specifications, nicotine limits, packaging, labeling, age restrictions,
+      taxation, advertising, and sales practices. Businesses operating in or supplying Ireland should review the
+      current <a href="https://www.gov.ie/en/publication/e-cigarettes/">Irish vaping regulations</a>
+      before purchasing products for resale.
+    </blockquote>
+    <p>Importantly, the fact that a product appears on a wholesale website does not automatically mean it's legal to sell in every market. Retailers are responsible for understanding the rules that apply to their own operations.</p>
+  </div>
+</section>
+
+<section class="block panel">
+  <div class="wrap">
+    <div class="kicker">Buy What Sells</div>
+    <h2>Wholesale vapes and customer demand</h2>
+    <p class="lede">Successful wholesale purchasing should be driven by customer demand.</p>
+    <p>
+      A retailer may have access to hundreds of products, but stocking every available option can create
+      unnecessary costs. Instead, analyze previous sales and customer preferences to determine which products
+      deserve more inventory — seasonal demand, product popularity, price points, and customer feedback can all
+      contribute to better purchasing decisions.
+    </p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="kicker">Avoid These</div>
+    <h2>Common mistakes when buying wholesale vapes</h2>
+    <ul class="check">
+      <li>Placing a large order without researching the supplier</li>
+      <li>Focusing entirely on the cheapest price</li>
+      <li>Ignoring applicable regulations</li>
+      <li>Overstocking beyond realistic sales capacity</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block panel">
+  <div class="wrap two-col">
+    <div>
+      <div class="kicker">Building a System</div>
+      <h2>How to build a better wholesale strategy</h2>
+      <p>
+        A strong strategy starts with research — identify your target market, review existing sales, determine
+        suitable products, and establish a realistic purchasing budget.
+      </p>
+      <p>Compare several suppliers using the same criteria: product quality, price, MOQ, delivery, documentation, customer service, and compliance. Once selected, monitor performance over time and adjust as the business grows.</p>
+    </div>
+    <div>
+      <div class="kicker">Long-Term Value</div>
+      <h2>Benefits of a reliable wholesale relationship</h2>
+      <p>
+        A dependable supplier can make it easier to plan inventory, communicate about availability, manage
+        recurring orders, and address problems with damaged or incorrect shipments.
+      </p>
+      <p>The relationship becomes especially valuable with established purchasing patterns — but retailers should keep reviewing supplier performance rather than assuming conditions will always remain the same.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="kicker">Wrapping Up</div>
+    <h2>Final thoughts</h2>
+    <p class="lede">Wholesale Vapes can provide a practical sourcing option for legitimate retailers and businesses that need vaping products in commercial quantities.</p>
+    <p>
+      However, successful wholesale purchasing requires more than finding a low price. Businesses should
+      evaluate supplier reliability, product authenticity, minimum order quantities, shipping costs, inventory
+      requirements, storage conditions, and applicable regulations before placing orders.
+    </p>
+    <p>
+      The best strategy is to purchase according to realistic customer demand, maintain accurate stock records,
+      and build relationships with suppliers that provide transparent information and dependable service. By
+      combining careful research with responsible inventory management and regulatory awareness, retailers can
+      create a more efficient wholesale purchasing process while reducing unnecessary business risks.
+    </p>
+  </div>
+</section>
+
+<section class="block panel" id="faq">
+  <div class="wrap">
+    <div class="kicker">Frequently Asked Questions</div>
+    <h2>FAQ about buying wholesale vapes</h2>
+
+    <details class="faq-item" open>
+      <summary>What are wholesale vapes?</summary>
+      <p>Wholesale vapes are vaping products purchased in commercial quantities from manufacturers, distributors, or specialized suppliers for legitimate business and retail purposes.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Why do businesses buy vapes wholesale?</summary>
+      <p>Businesses may purchase wholesale to manage inventory more efficiently, maintain product availability, and organize their purchasing around customer demand.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do I choose a wholesale vape supplier?</summary>
+      <p>Compare suppliers based on reputation, product authenticity, pricing, minimum order quantity, shipping, documentation, customer service, and applicable regulations.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is the cheapest wholesale supplier always the best?</summary>
+      <p>No. The lowest unit price may not represent the lowest overall cost once shipping, quality, minimum order quantities, and potential unsold inventory are considered.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What is MOQ in wholesale vaping?</summary>
+      <p>MOQ stands for Minimum Order Quantity. It is the smallest quantity a supplier requires a business to purchase in a wholesale order.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How can retailers avoid overstocking?</summary>
+      <p>Retailers can monitor sales, identify slow-moving products, set reasonable reorder levels, and base future orders on actual customer demand.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Why is product authenticity important?</summary>
+      <p>Authentic products help protect customer trust and reduce the risks associated with counterfeit, incorrectly labeled, or questionable inventory.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How should wholesale vape products be stored?</summary>
+      <p>Products should be stored according to manufacturer instructions and relevant safety requirements, with electronic devices and batteries protected from unsuitable conditions.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Are wholesale vape products legal everywhere?</summary>
+      <p>No. Laws vary between countries and jurisdictions. Businesses should verify the current requirements applicable to their specific market before purchasing or selling products.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What should I check before placing a large wholesale order?</summary>
+      <p>Check the supplier's reputation, product details, authenticity, MOQ, total cost, shipping terms, documentation, return policy, and compliance requirements before committing to a large order.</p>
+    </details>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Build a wholesale strategy that actually scales.</h2>
+    <p>Reliable suppliers, accurate inventory, and regulatory awareness — in that order.</p>
+    <a class="btn-steel" href="https://highrockvapeswholesale.ie/">Request a Wholesale Quote</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div style="color:#fff;font-family:'Libre Franklin',sans-serif;font-weight:800;font-size:18px;margin-bottom:12px;text-transform:uppercase;">HighRock Wholesale</div>
+        <p style="max-width:40ch;color:#848B8E;">Commercial supply of vaping devices, pods, and components for legitimate retailers — reliable sourcing, transparent pricing, and compliance-first practices.</p>
+        <div class="social-row">
+          <a href="#" aria-label="LinkedIn" title="LinkedIn">in</a>
+          <a href="#" aria-label="Facebook" title="Facebook">fb</a>
+          <a href="#" aria-label="X / Twitter" title="X">X</a>
+          <a href="#" aria-label="Instagram" title="Instagram">ig</a>
+        </div>
+      </div>
+      <div>
+        <h5>Guide</h5>
+        <ul>
+          <li><a href="#suppliers">Suppliers</a></li>
+          <li><a href="#pricing">Pricing &amp; MOQ</a></li>
+          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Trade</h5>
+        <ul>
+          <li><a href="https://highrockvapeswholesale.ie/">Request a Quote</a></li>
+          <li><a href="https://highrockvapeswholesale.ie/">Contact</a></li>
+          <li><a href="https://highrockvapeswholesale.ie/">Catalog</a></li>
+          <li><a href="https://highrockvapeswholesale.ie/">Terms of Trade</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HighRock Wholesale. All rights reserved.</span>
+      <span>Trade only — for licensed and legitimate retailers.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+
